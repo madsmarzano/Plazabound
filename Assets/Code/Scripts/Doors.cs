@@ -17,7 +17,7 @@ public class Doors : MonoBehaviour
     {
         //North, East, South, West
         { 4, 5, 6, 3 }, //Room1 -- FOOD COURT
-        { 1, 3, 4, 0 }, //Room2 -- CLOTHING STORE
+        { 5, 3, 4, 0 }, //Room2 -- CLOTHING STORE
         { 0, 1, 2, 4 }, //Room3 -- MUSIC STORE
         { 1, 5, 2, 3 }, //Room4 -- VENT MAZE
         { 1, 4, 2, 3 }, //Room5 -- PLAYPLACE
