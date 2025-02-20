@@ -1,17 +1,15 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 /// <summary>
 /// By Mads:
 /// 
-/// Objects that trigger teleportation will have a trigger collider attached to them.
-/// When the player collides with the trigger, their position is updated to the teleportPoint position. 
-/// Currently only works when Player is bug-size.
+/// Attached to vent passage entrance/exits (the small vent passages used to travel between rooms).
+/// When player collides with the vent, it triggers a teleportation into the passage (and vice versa).
+/// Trigger will only work if player is bug-sized.
 /// 
 /// </summary>
 
-public class Teleporter : MonoBehaviour
+public class VentPassageTeleport : MonoBehaviour
 {
     [SerializeField]
     private Transform teleportPoint;
@@ -28,6 +26,9 @@ public class Teleporter : MonoBehaviour
                 other.transform.position = teleportPoint.position;
             }
             Player player = other.GetComponent<Player>();
+
+            // If player is ENTERING the vent passage, change isInVent to TRUE
+            // If player is EXITING the vent passage, change isInVent to FALSE
             if (!player.isInVent)
             {
                 player.isInVent = true;
